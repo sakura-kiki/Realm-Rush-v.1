@@ -12,9 +12,8 @@ public class GridManager : MonoBehaviour
     void Awake() 
     {
         CreateGrid();
-        //asdfskfjdfk
     }
-
+        
     public Nodes GetNode(Vector2Int coordinates)
     {
         if (grid.ContainsKey(coordinates))
