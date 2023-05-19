@@ -1234,6 +1234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 141384726}
   - component: {fileID: 141384725}
+  - component: {fileID: 141384727}
   m_Layer: 0
   m_Name: Grid Manager
   m_TagString: Untagged
@@ -1253,7 +1254,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab76e9b6bb40f2f44bf44c071133c6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: {x: 3, y: 2}
+  node:
+    coordinates: {x: 0, y: 0}
+    isWalkable: 0
+    isExplored: 0
+    isPath: 0
+  gridSize: {x: 20, y: 20}
   unityGridSize: 10
 --- !u!4 &141384726
 Transform:
@@ -1270,6 +1276,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &141384727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141384724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2820b3c8c01265f41a76ba203da3d9e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startCoordinates: {x: 3, y: 3}
+  destinationCoordinates: {x: 12, y: 4}
 --- !u!4 &141425214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1876904163119267068, guid: 7b0e531bbd817d245864ddb993c9e32c, type: 3}
@@ -10664,7 +10684,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 60, y: 70, z: 30}
+  m_LocalPosition: {x: 55, y: 90, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23904,7 +23924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5571557329868528671, guid: 17288c6f4fafa184a9af1f9f2d82a46a, type: 3}
       propertyPath: poolSize
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5571557329868528671, guid: 17288c6f4fafa184a9af1f9f2d82a46a, type: 3}
       propertyPath: sapwnTimer

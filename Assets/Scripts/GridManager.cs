@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    [SerializeField] Nodes node;
     [SerializeField] Vector2Int gridSize;
     Dictionary<Vector2Int, Nodes> grid = new Dictionary<Vector2Int, Nodes>();
     [Tooltip("World Grid Size - Should match Unity Snap Settings")]
-    [SerializeField] int unityGridSize = 10;
+    int unityGridSize = 10;
     public int UnitGridSize { get { return unityGridSize; } }
 
     public Dictionary<Vector2Int, Nodes> Grid { get { return grid; } }
@@ -35,7 +34,16 @@ public class GridManager : MonoBehaviour
             grid[coordinates].isWalkable = false;
         }
     }
+    public void ResetNode()
+    {
+        foreach (KeyValuePair<Vector2Int, Nodes> entry in grid)
+        {
+            entry.Value.connectedTo = null;
+            entry.Value.isExplored = false;
+            entry.Value.isPath = false;
 
+        }
+    }
     public Vector2Int GetCoordinatesFromPosition(Vector3 position)
     {
         Vector2Int coordinates = new Vector2Int();
