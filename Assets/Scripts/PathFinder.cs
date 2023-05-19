@@ -42,15 +42,9 @@ public class PathFinder : MonoBehaviour
     {
         List<Nodes> neighbors = new List<Nodes>();
 
-        Debug.Log(neighbors);
-
-        Debug.Log(directions);
         foreach (Vector2Int direction in directions)
         {
-            Debug.Log(direction);
             Vector2Int neighborCoords = currentSearchNode.coordinates + direction;
-            Debug.Log(neighborCoords);
-
             if (grid.ContainsKey(neighborCoords))
             {
                 neighbors.Add(grid[neighborCoords]);
@@ -85,9 +79,8 @@ public class PathFinder : MonoBehaviour
                 isRunning = false;
             }
         }
-
-
     }
+
     List<Nodes> BuildPath()
     {
         List<Nodes> path = new List<Nodes>();

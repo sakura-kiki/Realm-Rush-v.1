@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
+    [SerializeField] Nodes node;
     [SerializeField] Vector2Int gridSize;
     Dictionary<Vector2Int, Nodes> grid = new Dictionary<Vector2Int, Nodes>();
     [Tooltip("World Grid Size - Should match Unity Snap Settings")]

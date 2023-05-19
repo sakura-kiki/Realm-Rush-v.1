@@ -9,9 +9,9 @@ using System;
 
 public class CoordinateLabeler : MonoBehaviour
 {
-    [SerializeField] Color defaultColor = Color.grey;
-    [SerializeField] Color blockedColor = Color.white;
-    [SerializeField] Color exploredColor = Color.black;
+    [SerializeField] Color defaultColor = Color.white;
+    [SerializeField] Color blockedColor = Color.black;
+    [SerializeField] Color exploredColor = Color.yellow;
     [SerializeField] Color pathColor = new Color(1f, 0.5f, 0f);
 
 
