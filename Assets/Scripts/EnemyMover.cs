@@ -38,7 +38,7 @@ public class EnemyMover : MonoBehaviour
         //Preparing the enemy for a new route to follow
         StopAllCoroutines();
         path.Clear();
-        path = pathFinder.GetNewPath();
+        path = pathFinder.GetNewPath(coordinates);
         StartCoroutine(FollowPath());
     }
 
